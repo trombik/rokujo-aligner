@@ -1,0 +1,62 @@
+import pytest
+from rokujo.aligner.aligner import align_sentences
+
+
+@pytest.mark.parametrize(
+    "source_sentences, target_sentences, expected_pairs",
+    [
+        (
+            ["Hello.", "How are you?"],
+            ["こんにちは。", "元気ですか？"],
+            [
+                {"en": "Hello.", "ja": "こんにちは。"},
+                {"en": "How are you?", "ja": "元気ですか?"},
+            ],
+        ),
+        (
+            # with extra sentence in the target, it should be ignored.
+            ["Good morning.", "Good night."],
+            ["おはようございます。", "こんにちは。", "おやすみなさい。"],
+            [
+                {"en": "Good morning.", "ja": "おはようございます。"},
+                {"en": "Good night.", "ja": "おやすみなさい。"},
+            ],
+        ),
+        (
+            # with extra sentence in the source, it should be ignored.
+            ["Good morning.", "Good night.", "Thank you."],
+            ["おはようございます。", "おやすみなさい。"],
+            [
+                {"en": "Good morning.", "ja": "おはようございます。"},
+                {"en": "Good night.", "ja": "おやすみなさい。"},
+            ],
+        ),
+        (
+            # when the source text becomes two sentences in the target, the
+            # target should be combined to a sentence.
+            ["The couple married in 2007 and have two children."],
+            ["2人は2007年に結婚。", "2人の子供がいる。"],
+            [
+                {"en": "The couple married in 2007 and have two children.",
+                 "ja": "2人は2007年に結婚。2人の子供がいる。"},
+            ],
+        ),
+    ],
+)
+def test_align_sentences(
+    source_sentences, target_sentences, expected_pairs, tmp_path
+):
+    source_file = tmp_path / "source.txt"
+    target_file = tmp_path / "target.txt"
+
+    source_file.write_text("\n".join(source_sentences))
+    target_file.write_text("\n".join(target_sentences))
+
+    result = align_sentences(source_file, target_file)
+
+    # Extract the English and Japanese sentences from the result
+    result_pairs = [{"en": pair["en"], "ja": pair["ja"]} for pair in result]
+    print(result_pairs)
+
+    # Assert that the result matches the expected pairs
+    assert result_pairs == expected_pairs
