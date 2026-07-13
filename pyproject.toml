@@ -1,0 +1,30 @@
+[project]
+name = "rokujo-aligner"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+#    "torch>=2.11.0",
+#    "sentence-transformers>=5.6.0",
+    "ja-ginza>=5.2.0",
+    "spacy>=3.8.11,<3.8.14"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+disable_test_id_escaping_and_forfeit_all_rights_to_community_support = true
