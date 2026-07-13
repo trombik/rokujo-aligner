@@ -66,16 +66,16 @@ def main(
     target_model = load_model(target_lang)
     encoder = load_encoder()
 
-    for src_path, tgt_path in zip(source_files, target_files):
+    for source_path, target_path in zip(source_files, target_files):
         console.print(
-            f"\n[bold green]Aligning:[/bold green] {src_path} <-> {tgt_path}"
+            f"\n[bold green]Aligning:[/bold green] {source_path} : {target_path}"  # noqa E501
         )
-        input1_string = read_file(str(src_path))
-        input2_string = read_file(str(tgt_path))
-        relative_dir = src_path.parent
+        input1_string = read_file(str(source_path))
+        input2_string = read_file(str(target_path))
+        relative_dir = source_path.parent
         dst_dir = output_dir / relative_dir
         dst_dir.mkdir(parents=True, exist_ok=True)
-        output_filename = f"{src_path.stem}.aligned{src_path.suffix}"
+        output_filename = f"{source_path.stem}.aligned{source_path.suffix}"
         output_path = dst_dir / output_filename
 
         with console.status("[bold green]Processing...", spinner="dots"):
