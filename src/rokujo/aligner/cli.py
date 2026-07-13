@@ -3,7 +3,7 @@ import typer
 from rich.console import Console
 
 from rokujo.aligner.aligner import align_sentences
-from rokujo.aligner.utils import load_model, read_file, load_encoder
+from rokujo.aligner.utils import load_encoder, load_model, read_file
 
 app = typer.Typer()
 

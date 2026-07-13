@@ -10,7 +10,7 @@ def read_file(file_path) -> str:
     return raw_string
 
 
-def laod_encoder(name="sentence-transformers/LaBSE"):
+def load_encoder(name="sentence-transformers/LaBSE"):
     return SentenceTransformer(name)
 
 
