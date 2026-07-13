@@ -1,13 +1,12 @@
 # import argparse
-import spacy
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-from rokujo.aligner.utils import normalize_text, read_file
+from rokujo.aligner.utils import normalize_text, read_file, load_model
 
 
-def split_sentences(string, lang):
+def split_sentences(string, lang, nlp):
     """Splits text into sentences using spaCy or GiNZA based on the language.
 
     This function reads the text from the specified file, normalizes it using
@@ -25,25 +24,6 @@ def split_sentences(string, lang):
     Raises:
         ValueError: If the language is not supported.
     """
-    match lang:
-        case "ja":
-            config = {
-                "components": {
-                    "compound_splitter": {
-                        "split_mode": "C",
-                    }
-                }
-            }
-            nlp = spacy.load("ja_ginza", config=config)
-        case "en":
-            nlp = spacy.load(
-                "en_core_web_sm",
-                disable=["parser", "attribute_ruler", "lemmatizer", "ner"],
-            )
-            nlp.add_pipe("sentencizer")
-        case _:
-            raise ValueError(f"Unsupported language: {lang}")
-
     cleaned_text = normalize_text(string, lang=lang)
     doc = nlp(cleaned_text)
     return [sent.text.strip() for sent in doc.sents if sent.text.strip()]
@@ -119,7 +99,16 @@ def precompute_target_embeddings(target_sentences, model):
     return target_cache
 
 
-def align_sentences(source_string, target_string, threshold=0.6, window_size=3):
+def align_sentences(
+    source_string,
+    target_string,
+    source_lang="en",
+    target_lang="ja",
+    source_model=None,
+    target_model=None,
+    threshold=0.6,
+    window_size=3,
+):
     """
     Aligns source and target sentences using a locality-constrained
     approach.
@@ -147,10 +136,24 @@ def align_sentences(source_string, target_string, threshold=0.6, window_size=3):
         the sentences.
     """
     print("Splitting source sentences ...")
-    source_sentences = split_sentences(source_string, lang="en")
+    if source_model is None:
+        nlp_source = load_model(source_lang)
+    else:
+        nlp_source = source_model
+
+    source_sentences = split_sentences(
+        source_string, lang=source_lang, nlp=nlp_source
+    )
 
     print("Splitting target sentences ...")
-    target_sentences = split_sentences(target_string, lang="ja")
+    if target_model is None:
+        nlp_target = load_model(target_lang)
+    else:
+        nlp_target = target_model
+
+    target_sentences = split_sentences(
+        target_string, lang=target_lang, nlp=nlp_target
+    )
 
     if not source_sentences or not target_sentences:
         print("Error: One of the files components resolved to empty text.")

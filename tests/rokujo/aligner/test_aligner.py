@@ -1,5 +1,12 @@
 import pytest
-from rokujo.aligner.aligner import align_sentences, read_file
+from rokujo.aligner.aligner import align_sentences, read_file, load_model
+
+
+@pytest.fixture(scope="session")
+def cached_models():
+    source_model = load_model("en")
+    target_model = load_model("ja")
+    return source_model, target_model
 
 
 @pytest.mark.parametrize(
@@ -44,12 +51,16 @@ from rokujo.aligner.aligner import align_sentences, read_file
     ],
 )
 def test_align_sentences(
-    source_sentences, target_sentences, expected_pairs, tmp_path
+    source_sentences, target_sentences, expected_pairs, cached_models, tmp_path
 ):
     source_text = "\n".join(source_sentences)
     target_text = "\n".join(target_sentences)
 
-    result = align_sentences(source_text, target_text)
+    source_model, target_model = cached_models
+
+    result = align_sentences(source_text, target_text,
+                             source_model=source_model,
+                             target_model=target_model)
 
     # Extract the English and Japanese sentences from the result
     result_pairs = [{"en": pair["en"], "ja": pair["ja"]} for pair in result]

@@ -1,11 +1,35 @@
 import re
 import unicodedata
+import spacy
 
 
 def read_file(file_path) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         raw_string = f.read()
     return raw_string
+
+
+def load_model(lang):
+    print(f"Loading {lang}")
+    match lang:
+        case "ja":
+            config = {
+                "components": {
+                    "compound_splitter": {
+                        "split_mode": "C",
+                    }
+                }
+            }
+            nlp = spacy.load("ja_ginza", config=config)
+        case "en":
+            nlp = spacy.load(
+                "en_core_web_sm",
+                disable=["parser", "attribute_ruler", "lemmatizer", "ner"],
+            )
+            nlp.add_pipe("sentencizer")
+        case _:
+            raise ValueError(f"Unsupported language: {lang}")
+    return nlp
 
 
 def normalize_symbol(text) -> str:
