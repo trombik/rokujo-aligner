@@ -1,12 +1,17 @@
 import re
 import unicodedata
 import spacy
+from sentence_transformers import SentenceTransformer
 
 
 def read_file(file_path) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         raw_string = f.read()
     return raw_string
+
+
+def laod_encoder(name="sentence-transformers/LaBSE"):
+    return SentenceTransformer(name)
 
 
 def load_model(lang):

@@ -1,10 +1,9 @@
 from pathlib import Path
 import typer
 from rich.console import Console
-from sentence_transformers import SentenceTransformer
 
 from rokujo.aligner.aligner import align_sentences
-from rokujo.aligner.utils import load_model, read_file
+from rokujo.aligner.utils import load_model, read_file, load_encoder
 
 app = typer.Typer()
 
@@ -65,7 +64,7 @@ def main(
 
     source_model = load_model(source_lang)
     target_model = load_model(target_lang)
-    encoder = SentenceTransformer("sentence-transformers/LaBSE")
+    encoder = load_encoder()
 
     for src_path, tgt_path in zip(source_files, target_files):
         console.print(
