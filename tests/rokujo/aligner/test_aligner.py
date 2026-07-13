@@ -1,5 +1,5 @@
 import pytest
-from rokujo.aligner.aligner import align_sentences
+from rokujo.aligner.aligner import align_sentences, read_file
 
 
 @pytest.mark.parametrize(
@@ -46,13 +46,10 @@ from rokujo.aligner.aligner import align_sentences
 def test_align_sentences(
     source_sentences, target_sentences, expected_pairs, tmp_path
 ):
-    source_file = tmp_path / "source.txt"
-    target_file = tmp_path / "target.txt"
+    source_text = "\n".join(source_sentences)
+    target_text = "\n".join(target_sentences)
 
-    source_file.write_text("\n".join(source_sentences))
-    target_file.write_text("\n".join(target_sentences))
-
-    result = align_sentences(source_file, target_file)
+    result = align_sentences(source_text, target_text)
 
     # Extract the English and Japanese sentences from the result
     result_pairs = [{"en": pair["en"], "ja": pair["ja"]} for pair in result]

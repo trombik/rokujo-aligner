@@ -4,10 +4,10 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
-from .utils import normalize_text
+from rokujo.aligner.utils import normalize_text, read_file
 
 
-def split_sentences(file_path, lang):
+def split_sentences(string, lang):
     """Splits text into sentences using spaCy or GiNZA based on the language.
 
     This function reads the text from the specified file, normalizes it using
@@ -15,7 +15,7 @@ def split_sentences(file_path, lang):
     based on the language.
 
     Args:
-        file_path (str): The path to the file containing the text.
+        string (str): The path to the file containing the text.
         lang (str): The language of the text. Can be "ja" for Japanese or "en"
             for English.
 
@@ -44,10 +44,7 @@ def split_sentences(file_path, lang):
         case _:
             raise ValueError(f"Unsupported language: {lang}")
 
-    with open(file_path, "r", encoding="utf-8") as f:
-        raw_text = f.read()
-
-    cleaned_text = normalize_text(raw_text, lang=lang)
+    cleaned_text = normalize_text(string, lang=lang)
     doc = nlp(cleaned_text)
     return [sent.text.strip() for sent in doc.sents if sent.text.strip()]
 
@@ -122,7 +119,7 @@ def precompute_target_embeddings(target_sentences, model):
     return target_cache
 
 
-def align_sentences(source_file, target_file, threshold=0.6, window_size=3):
+def align_sentences(source_string, target_string, threshold=0.6, window_size=3):
     """
     Aligns source and target sentences using a locality-constrained
     approach.
@@ -150,10 +147,10 @@ def align_sentences(source_file, target_file, threshold=0.6, window_size=3):
         the sentences.
     """
     print("Splitting source sentences ...")
-    source_sentences = split_sentences(source_file, lang="en")
+    source_sentences = split_sentences(source_string, lang="en")
 
     print("Splitting target sentences ...")
-    target_sentences = split_sentences(target_file, lang="ja")
+    target_sentences = split_sentences(target_string, lang="ja")
 
     if not source_sentences or not target_sentences:
         print("Error: One of the files components resolved to empty text.")
@@ -341,10 +338,12 @@ if __name__ == "__main__":
     ):
         console = Console()
 
+        input1_string = read_file(input1)
+        input2_string = read_file(input2)
         with console.status("[bold green]Processing...", spinner="dots"):
             pairs = align_sentences(
-                input1,
-                input2,
+                input1_string,
+                input2_string,
                 threshold=threshold,
                 window_size=window,
             )

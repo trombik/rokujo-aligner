@@ -2,6 +2,12 @@ import re
 import unicodedata
 
 
+def read_file(file_path) -> str:
+    with open(file_path, "r", encoding="utf-8") as f:
+        raw_string = f.read()
+    return raw_string
+
+
 def normalize_symbol(text) -> str:
     mappings = {
         # use unicodedata.name("string") for unicode character name
