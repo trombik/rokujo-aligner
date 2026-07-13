@@ -27,6 +27,24 @@ def cached_encoder():
             ],
         ),
         (
+            # with an extra empty line in the target, it should be ignored.
+            ["Hello.", "How are you?"],
+            ["こんにちは。", "\n", "元気ですか？"],
+            [
+                {"en": "Hello.", "ja": "こんにちは。"},
+                {"en": "How are you?", "ja": "元気ですか?"},
+            ],
+        ),
+        (
+            # with an extra empty line in the source, it should be ignored.
+            ["Hello.", "\n", "How are you?"],
+            ["こんにちは。", "元気ですか？"],
+            [
+                {"en": "Hello.", "ja": "こんにちは。"},
+                {"en": "How are you?", "ja": "元気ですか?"},
+            ],
+        ),
+        (
             # with extra sentence in the target, it should be ignored.
             ["Good morning.", "Good night."],
             ["おはようございます。", "こんにちは。", "おやすみなさい。"],
