@@ -106,6 +106,7 @@ def align_sentences(
     target_lang="ja",
     source_model=None,
     target_model=None,
+    encoder=None,
     threshold=0.6,
     window_size=3,
 ):
@@ -162,13 +163,14 @@ def align_sentences(
     print(f"Total source segemnts extracted: {len(source_sentences)}")
     print(f"Total target segemnts extracted: {len(target_sentences)}")
 
-    model = SentenceTransformer("sentence-transformers/LaBSE")
+    if encoder is None:
+        encoder = SentenceTransformer("sentence-transformers/LaBSE")
 
     print("Encoding source segments...")
-    embeddings_src = model.encode(source_sentences, show_progress_bar=True)
+    embeddings_src = encoder.encode(source_sentences, show_progress_bar=True)
 
     print("Encoding target segments...")
-    target_cache = precompute_target_embeddings(target_sentences, model)
+    target_cache = precompute_target_embeddings(target_sentences, encoder)
     embeddings_target = target_cache["single"]
 
     # generate similarity matrix.

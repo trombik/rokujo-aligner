@@ -1,4 +1,5 @@
 import pytest
+from sentence_transformers import SentenceTransformer
 from rokujo.aligner.aligner import align_sentences, read_file, load_model
 
 
@@ -7,6 +8,11 @@ def cached_models():
     source_model = load_model("en")
     target_model = load_model("ja")
     return source_model, target_model
+
+
+@pytest.fixture(scope="session")
+def cached_encoder():
+    return SentenceTransformer("sentence-transformers/LaBSE")
 
 
 @pytest.mark.parametrize(
@@ -44,23 +50,34 @@ def cached_models():
             ["The couple married in 2007 and have two children."],
             ["2人は2007年に結婚。", "2人の子供がいる。"],
             [
-                {"en": "The couple married in 2007 and have two children.",
-                 "ja": "2人は2007年に結婚。2人の子供がいる。"},
+                {
+                    "en": "The couple married in 2007 and have two children.",
+                    "ja": "2人は2007年に結婚。2人の子供がいる。",
+                },
             ],
         ),
     ],
 )
 def test_align_sentences(
-    source_sentences, target_sentences, expected_pairs, cached_models, tmp_path
+    source_sentences,
+    target_sentences,
+    expected_pairs,
+    cached_models,
+    cached_encoder,
 ):
     source_text = "\n".join(source_sentences)
     target_text = "\n".join(target_sentences)
 
     source_model, target_model = cached_models
+    encoder = cached_encoder
 
-    result = align_sentences(source_text, target_text,
-                             source_model=source_model,
-                             target_model=target_model)
+    result = align_sentences(
+        source_text,
+        target_text,
+        source_model=source_model,
+        target_model=target_model,
+        encoder=encoder,
+    )
 
     # Extract the English and Japanese sentences from the result
     result_pairs = [{"en": pair["en"], "ja": pair["ja"]} for pair in result]
