@@ -16,6 +16,9 @@ dev = [
     "pytest>=8.4.0",
 ]
 
+[project.scripts]
+rokujo-aligner = "rokujo.aligner.cli:main"
+
 [build-system]
 requires = ["setuptools>=61.0.0"]
 build-backend = "setuptools.build_meta"
