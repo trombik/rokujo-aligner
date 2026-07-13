@@ -1,6 +1,7 @@
 # import argparse
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from rich.markup import escape
 import numpy as np
 
 from rokujo.aligner.utils import normalize_text, read_file, load_model
@@ -364,13 +365,20 @@ if __name__ == "__main__":
         for pair in track(
             pairs, description="[bold green]Displaying results..."
         ):
+            # XXX escape string as the string might contain special characters,
+            # such as [foo].
+            en_escaped = escape(pair["en"])
+            ja_escaped = escape(pair["ja"])
+
             colored_text = (
-                f"[yellow]{pair['en']}[/yellow]\n[cyan]{pair['ja']}[/cyan]"
+                f"[yellow]{en_escaped}[/yellow]\n[cyan]{ja_escaped}[/cyan]"
             )
+            source_escaped = str(pair["source_index"])
+            target_escaped = str(pair["target_index"])
             table.add_row(
                 f"{pair['score']:.4f}",
-                str(pair["source_index"]),
-                str(pair["target_index"]),
+                str(source_escaped),
+                str(target_escaped),
                 colored_text,
             )
 
