@@ -75,7 +75,7 @@ def main(
         relative_dir = source_path.parent
         dst_dir = output_dir / relative_dir
         dst_dir.mkdir(parents=True, exist_ok=True)
-        output_filename = f"{source_path.stem}.aligned{source_path.suffix}"
+        output_filename = f"{source_path.stem}.{source_path.suffix}.tsv"
         output_path = dst_dir / output_filename
 
         with console.status("[bold green]Processing...", spinner="dots"):
