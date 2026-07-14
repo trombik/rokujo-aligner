@@ -100,10 +100,47 @@ def normalize_text(text, lang="ja") -> str:
     text = remove_nonprintable(text)
 
     # multiple spaces into one
-    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"[ \t]+", " ", text)
 
     match lang:
         case "ja":
             text = normalize_text_ja(text)
 
     return text.strip()
+
+
+def separate_headings(text: str, lang: str) -> str:
+    """
+    Function to add a period to titles so that the line is recognized as a
+    sentence. The input string must be normalized.
+    """
+    lines = text.splitlines()
+    processed_lines = []
+
+    for line in lines:
+        line_strip = line.strip()
+        if not line_strip:
+            processed_lines.append("")
+            continue
+        match lang:
+            case "en":
+                if (
+                    len(line_strip) < 30 and
+                    # ends with usual character?
+                    not re.search(r'[:.!?]$', line_strip) and
+                    # "Quoted like this."?
+                    not re.search(r'\."$', line_strip)
+                   ):
+                    processed_lines.append(line_strip + ".")
+                else:
+                    processed_lines.append(line)
+            case "ja":
+                if (
+                   len(line_strip) < 40 and
+                   not re.search(r'[:。!?」]$', line_strip)
+                   ):
+                    processed_lines.append(line_strip + "。")
+                else:
+                    processed_lines.append(line)
+
+    return "\n".join(processed_lines)

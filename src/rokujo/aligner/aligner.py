@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from rich.markup import escape
 import numpy as np
 
-from rokujo.aligner.utils import normalize_text, read_file, load_model
+from rokujo.aligner.utils import normalize_text, read_file, load_model, separate_headings
 
 
 def split_sentences(string, lang, nlp):
@@ -26,6 +26,7 @@ def split_sentences(string, lang, nlp):
         ValueError: If the language is not supported.
     """
     cleaned_text = normalize_text(string, lang=lang)
+    cleaned_text = separate_headings(cleaned_text, lang=lang)
     doc = nlp(cleaned_text)
     return [sent.text.strip() for sent in doc.sents if sent.text.strip()]
 

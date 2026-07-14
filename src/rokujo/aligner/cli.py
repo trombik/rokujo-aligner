@@ -70,18 +70,18 @@ def main(
         console.print(
             f"\n[bold green]Aligning:[/bold green] {source_path} : {target_path}"  # noqa E501
         )
-        input1_string = read_file(str(source_path))
-        input2_string = read_file(str(target_path))
+        source_string = read_file(str(source_path))
+        target_string = read_file(str(target_path))
         relative_dir = source_path.parent
         dst_dir = output_dir / relative_dir
         dst_dir.mkdir(parents=True, exist_ok=True)
-        output_filename = f"{source_path.stem}.{source_path.suffix}.tsv"
+        output_filename = f"{source_path.stem}{source_path.suffix}.tsv"
         output_path = dst_dir / output_filename
 
         with console.status("[bold green]Processing...", spinner="dots"):
             pairs = align_sentences(
-                input1_string,
-                input2_string,
+                source_string,
+                target_string,
                 threshold=threshold,
                 window_size=window,
                 source_lang=source_lang,
