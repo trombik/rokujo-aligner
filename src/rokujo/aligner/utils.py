@@ -70,8 +70,8 @@ def normalize_text_ja(text) -> str:
     # Japanese-specific normalization
     #
     # remove space in a sentence
-    text = re.sub(r"([^\x00-\x7F])\s+(?=[^\x00-\x7F])", r"\1", text)
-    text = re.sub(r"([\x00-\x7F])\s+(?=[^\x00-\x7F])", r"\1", text)
+    text = re.sub(r"([^\x00-\x7F])[ \t]+(?=[^\x00-\x7F])", r"\1", text)
+    text = re.sub(r"([\x00-\x7F])[ \t]+(?=[^\x00-\x7F])", r"\1", text)
     return text
 
 
@@ -125,7 +125,6 @@ def separate_headings(text: str, lang: str) -> str:
         match lang:
             case "en":
                 if (
-                    len(line_strip) < 30 and
                     # ends with usual character?
                     not re.search(r'[:.!?]$', line_strip) and
                     # "Quoted like this."?
@@ -136,7 +135,6 @@ def separate_headings(text: str, lang: str) -> str:
                     processed_lines.append(line)
             case "ja":
                 if (
-                   len(line_strip) < 40 and
                    not re.search(r'[:。!?」]$', line_strip)
                    ):
                     processed_lines.append(line_strip + "。")

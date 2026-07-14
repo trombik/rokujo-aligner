@@ -74,6 +74,60 @@ def cached_encoder():
                 },
             ],
         ),
+        (
+            # when title in English does not end with usual characters, such
+            # as periods, append a period.
+            #
+            # when title in Japanese does not end with usual characters, such
+            # as `。`, append a `。`.
+            ["Title or Headings", "Here is the body."],
+            ["タイトルまたはヘディング", "ここにボディがあります。"],
+            [
+                {
+                    "en": "Title or Headings.",
+                    "ja": "タイトルまたはヘディング。"
+                },
+                {
+                    "en": "Here is the body.",
+                    "ja": "ここにボディがあります。"
+                },
+            ],
+        ),
+        (
+            # when title in English ends with a brace, append a period.
+            #
+            # when title in Japanese ends with a brace, append a `。`.
+            ["Title and (braces)", "Here is the body."],
+            ["タイトルと（かっこ）", "ここにボディがあります。"],
+            [
+                {
+                    "en": "Title and (braces).",
+                    "ja": "タイトルと(かっこ)。"
+                },
+                {
+                    "en": "Here is the body.",
+                    "ja": "ここにボディがあります。"
+                },
+            ],
+        ),
+        (
+            # when title in English ends with a period but double-quoted,
+            # append a period.
+            #
+            # when title in Japanese is quoted, do NOT append `。`.
+            ['"Quoted title."', "Here is the body."],
+            ["「クオートされたタイトル」", "ここにボディがあります。"],
+            [
+                {
+                    "en": '"Quoted title."',
+                    "ja": "「クオートされたタイトル」",
+                },
+                {
+                    "en": "Here is the body.",
+                    "ja": "ここにボディがあります。"
+                },
+            ],
+        ),
     ],
 )
 def test_align_sentences(
