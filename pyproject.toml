@@ -1,25 +1,45 @@
 [project]
 name = "rokujo-aligner"
 version = "0.1.0"
-description = "Add your description here"
+description = "rokujo-aligner is a command-line tool designed to automatically extract sentence-level parallel corpora from documents in two different languages,"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = [
-    "sentence-transformers>=5.6.0",
-    "ja-ginza>=5.2.0",
-    "spacy>=3.8.11,<3.8.14",
+    "curl-cffi>=0.16.1b1",
+    "ipython>=9.16.1",
+    "markitdown[docx]>=0.1.7",
+    "marko>=2.2.3",
+    "onnxruntime==1.27.0",
+    "pip>=26.2.1",
+    "py3langid>=0.3.0",
     "rich>=15.0",
-    "numpy>=2.4.0",
+    "scrapy-impersonate>=1.8.0",
+    "scrapy-playwright>=0.0.48",
+    "playwright>=1.58.0",
+    "scrapy>=2.13.3",
+    "sentence-transformers>=5.6.0",
+    "torch>=2.12.0",
+    "trafilatura>=2.2.0",
     "typer>=0.26.0",
+    "yasbd-lib>=0.15.1",
+    "vecalign>=2.0.0",
+]
+license = "MIT"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Text Processing :: Linguistic",
 ]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
     "pytest>=8.4.0",
+    "typer[all]>=0.27.1",
 ]
 
 [project.scripts]
-rokujo-aligner = "rokujo.aligner.cli:main"
+rokujo-aligner = "rokujo.aligner.cli:app"
 
 [build-system]
 requires = ["setuptools>=61.0.0"]
@@ -32,4 +52,50 @@ package-dir = {"" = "src"}
 pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-v --tb=short"
-disable_test_id_escaping_and_forfeit_all_rights_to_community_support = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "'freebsd' not in sys_platform" },
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+onnxruntime = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+curl-cffi = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+scipy = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+
+]
+
+numpy = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+cryptography = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+scrapy-impersonate = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+playwright = [
+    { index = "freebsd", marker = "'freebsd' in sys_platform" },
+]
+
+vecalign = { git = "https://github.com/thompsonb/vecalign" }
+
+[[tool.uv.index]]
+name = "freebsd"
+url = "http://127.0.0.1:8000/simple/"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
