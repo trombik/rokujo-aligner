@@ -12,3 +12,7 @@ wheels/
 tmp/
 foo/
 *.core
+*.swp
+*.jsonl
+*.tmx
+out/
