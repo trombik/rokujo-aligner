@@ -1,0 +1,16 @@
+from abc import ABC, abstractmethod
+
+from rokujo.aligner.aligned_line import AlignedLine
+
+
+class BaseFormatter(ABC):
+    @abstractmethod
+    def process(
+        self,
+        aligned_lines: list[AlignedLine],
+        source_lang: str = "",
+        target_lang: str = "",
+        source_location: str | None = None,
+        target_location: str | None = None,
+    ) -> str:
+        pass
