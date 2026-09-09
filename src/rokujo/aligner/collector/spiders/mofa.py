@@ -9,7 +9,7 @@ class MofaSpider(BaseBilingualArticleSpider):
     start_urls = ["https://www.mofa.go.jp/whats/index.html"]
     article_xpath = "//ul[@class='link-list']/li//@href"
     source_xpath = "//div[contains(@class, 'other-language')]//a/@href"
-    swap_target_and_source: bool = False
+    swap_target_and_source: bool = True
 
     def parse_archive_index(self, response: Response):
         all_index_pages = response.xpath(
