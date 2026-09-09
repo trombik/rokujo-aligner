@@ -1,10 +1,11 @@
 from typing import List
 
 from rokujo.aligner.pipeline.stage import (
-    BaseStage,
-    NormalizeMarkdownStage,
-    FormatStage,
     AlignStage,
+    BaseStage,
+    FormatStage,
+    NormalizeMarkdownStage,
+    PostAlignStage,
 )
 from rokujo.aligner.pipeline import PipelineContext
 
@@ -14,6 +15,7 @@ class MarkdownPipeline:
         default_stages = [
             NormalizeMarkdownStage(),
             AlignStage(),
+            PostAlignStage(),
             FormatStage(),
         ]
         self.stages: List[BaseStage] = stages or default_stages

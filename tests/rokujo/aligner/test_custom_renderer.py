@@ -33,6 +33,27 @@ def md():
             "Before code.\n\n```python\ncode block\n```\n\nAfter code.",
             "Before code. After code.",
         ),
+        (
+            "[foo](http://example.org/)",
+            "foo",
+        ),
+        (
+            "[foo]",
+            "[foo]",
+        ),
+        (
+            "**bold**",
+            "bold",
+        ),
+        (
+            "**[bold]** foo",
+            "[bold] foo",
+        ),
+        (
+            # this is an expected behaviour according to the spec.
+            "**[bold]**foo",
+            "**[bold]**foo",
+        ),
     ],
 )
 def test_custom_renderer(md, source, expected):
