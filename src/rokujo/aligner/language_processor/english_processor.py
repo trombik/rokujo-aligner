@@ -29,8 +29,11 @@ class EnglishProcessor(LanguageProcessor):
         return sentences
 
     def is_valid_paragraph(self, text: str) -> bool:
+        text = text.strip()
         n_sentence = self.count_sentence(text)
         if n_sentence == 1:
+            if re.search(r'^\d+\.$', text):
+                return False
             if not text.strip('"').endswith(self.sentence_endings):
                 return False
         return True

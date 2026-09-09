@@ -12,6 +12,7 @@ class JapaneseProcessor(LanguageProcessor):
         self.sentence_endings = ("。", "!", "?")
 
     def is_valid_paragraph(self, text: str):
+        text = text.strip()
         n_sentence = self.count_sentence(text)
 
         # In Japanese artciles, <p> is often used as a heading or something
@@ -22,6 +23,8 @@ class JapaneseProcessor(LanguageProcessor):
         # * Posted by someone
         # * 聞き手：山田太郎
         if n_sentence == 1:
+            if re.search(r"^\d\+\.$", text):
+                return False
             if text.startswith("「") and text.endswith("」"):
                 return True
             if (

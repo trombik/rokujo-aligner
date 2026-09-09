@@ -63,6 +63,8 @@ def test_count_sentence(text, expected):
         ['"A valid paragraph?"', True],
         ['"A valid paragraph?" Another sentence.', True],
         ['Click here', False],
+        ["1.", False],
+        ["10.", False],
     ]
 )
 def test_is_valid_paragraph(text, expected):

@@ -64,9 +64,15 @@ def test_count_sentence(text, expected):
         ["Posted by someone", False],
         ["(質問者)", False],
         ["1月1日", False],
+        ["1.", False],
+        ["10.", False],
         ["「有効なパラグラフ」", True],
         ["有効なパラグラフ。", True],
+        ["有効なパラグラフ。 ", True],
+        [" 有効なパラグラフ。", True],
+        [" 有効なパラグラフ。 ", True],
         ["これは(なんと!)有効。", True],
+        ["**(1)**安倍総理から,以下の旨を述べました。", True],
     ],
 )
 def test_is_valid_paragraph(text, expected):
