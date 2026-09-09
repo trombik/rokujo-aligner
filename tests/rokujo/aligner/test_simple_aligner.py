@@ -7,7 +7,8 @@ from rokujo.aligner.language_processor import LanguageProcessorFactory
 
 @pytest.fixture(scope="session")
 def cached_encoder():
-    return SentenceTransformer("sentence-transformers/LaBSE")
+    # XXX on macOS, the tests fail without device="cpu"
+    return SentenceTransformer("sentence-transformers/LaBSE", device="cpu")
 
 
 @pytest.mark.parametrize(
