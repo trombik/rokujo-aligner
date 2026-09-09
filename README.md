@@ -159,13 +159,15 @@ For more details, see [README_CLI.md](README_CLI.md).
 
 ## Available aligners
 
-Simple aligner aligns source and target sentences using a locality-constrained
-approach. It supports 1:1 and 1:2 alignments but does not support 1:N, where
-N>2, or M:N.  This is the default aligner.
-
 [Vecalign](https://github.com/thompsonb/vecalign)
 is an accurate sentence alignment algorithm which is fast even for very long
-documents.
+documents. It supports 1:N and M:N alignments. However, it requires embedding
+multiple combinations of sentences in the both source and target, taking longer
+to process them. This is the default aligner.
+
+Simple aligner aligns source and target sentences using a locality-constrained
+approach. It supports 1:1 and 1:2 alignments but does not support 1:N, where
+N>2, or M:N.
 
 ## Spiders for Document Alignment and Batch Processing
 
