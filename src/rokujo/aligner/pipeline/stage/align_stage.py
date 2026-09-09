@@ -54,6 +54,6 @@ class AlignStage(BaseStage):
             if processor.is_valid_paragraph(text=rendered):
                 rendered_paragraphs.append(rendered)
             else:
-                logger.debug(f"Discarded an invalid paragraph: `{rendered}`")
+                logger.debug(f"Discarded an invalid paragraph ({processor.lang}): `{rendered}`")
 
         return processor.paragraph_separator.join(rendered_paragraphs)
