@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="rokujo-aligner" creationtoolversion="0.1.0" segtype="sentence" o-tmf="UTF-8" adminlang="en" srclang="en" datatype="PlainText"/>
+  <body>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I am Ueda from NHK.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>NHKの上田です。</seg>
+        <prop type="x-Similarity-Score">0.22806480526924133</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Thank you for taking my question.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>よろしくお願いします。</seg>
+        <prop type="x-Similarity-Score">0.6871614456176758</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Madam Prime Minister, you have just held your first telephone meeting with Prime Minister Burnham of the United Kingdom of Great Britain and Northern Ireland.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>総理は先ほどイギリスのバーナム首相と、初めて電話会談をされました。</seg>
+        <prop type="x-Similarity-Score">0.33172738552093506</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Please tell us about the discussion, including the exchange of views on the situation in the Middle East.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>会談内容について伺います。 また、中東情勢など、どのような意見交換をされましたでしょうか。</seg>
+        <prop type="x-Similarity-Score">0.34589293599128723</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>A short while ago, from 4:00 p.m. for approximately 30 minutes, I held a telephone meeting with Prime Minister Burnham of the United Kingdom of Great Britain and Northern Ireland, who assumed office last month.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>よろしくお願いします。 先ほど、16時から約30分間、先月就任された英国のバーナム首相との間で電話会談を行いました。</seg>
+        <prop type="x-Similarity-Score">0.2767760157585144</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I once again congratulated Prime Minister Burnham on his assumption of office.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>私からは、バーナム首相の就任について、改めてお祝いを申し上げました。</seg>
+        <prop type="x-Similarity-Score">0.18479472398757935</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I told him that I attach great importance to Japan-UK relations and that I would like to work with him to elevate Japan-UK relations to new heights and cooperate closely toward achieving peace and stability in the international community.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>私自身、日英関係の重要性を非常に強く認識しており、バーナム首相と共に日英関係を更なる高みに引き上げて、国際社会の平和と安定の実現のために緊密に連携していきたい旨をお伝えしました。</seg>
+        <prop type="x-Similarity-Score">0.3235606551170349</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Prime Minister Burnham and I also shared the recognition that the security of the Euro-Atlantic and the Indo-Pacific is inseparable.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>また、バーナム首相との間では、欧州・大西洋とインド太平洋の安全保障というのは不可分であるという認識を共有しました。</seg>
+        <prop type="x-Similarity-Score">0.29180970788002014</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>We concurred on continuing to promote cooperation in the security field, including the Global Combat Air Programme (GCAP), as well as in the fields of advanced technology and economic security. This formulation closely follows the terminology used by MOFA in recent Japan-UK exchanges.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>そして、GCAP(グローバル戦闘航空プログラム)を含む安全保障分野や、また先端技術、経済安全保障分野での協力を引き続き推進していくということで一致をいたしました。</seg>
+        <prop type="x-Similarity-Score">0.2899051308631897</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Prime Minister Burnham also expressed his desire to further deepen Japan-UK relations.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>さらに、バーナム首相からは、日英関係を一層緊密にしていきたいという旨の御発言がありました。</seg>
+        <prop type="x-Similarity-Score">0.2636740505695343</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Going forward, I intend to continue working closely with Prime Minister Burnham and the UK, our "Enhanced Global Strategic Partner.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/20kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>今後も、バーナム首相と共に、「強化されたグローバルな戦略的パートナー」である英国との間で、緊密に連携していきたいと考えております。 以上です。</seg>
+        <prop type="x-Similarity-Score">0.21250106394290924</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0820kaiken.html</prop>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

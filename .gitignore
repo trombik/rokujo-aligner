@@ -14,5 +14,4 @@ foo/
 *.core
 *.swp
 *.jsonl
-*.tmx
 out/

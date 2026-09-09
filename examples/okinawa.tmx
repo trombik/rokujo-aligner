@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="rokujo-aligner" creationtoolversion="0.1.0" segtype="sentence" o-tmf="UTF-8" adminlang="en" srclang="en" datatype="PlainText"/>
+  <body>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>On the occasion of the Memorial Ceremony to Commemorate the Fallen on the 81st Anniversary of the End of the Battle of Okinawa, I offer my heartfelt mourning for the souls of those who lost their lives in the ravages of war and to all those who fell on the battlefield during the Battle of Okinawa.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>令和8年沖縄全戦没者追悼式が執り行われるに当たり、沖縄戦において、戦禍に遭われ亡くなられた御霊(みたま)、戦場に斃(たお)れられた御霊に、謹んで哀悼の誠を捧(ささ)げます。</seg>
+        <prop type="x-Similarity-Score">0.3622196614742279</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>During the war, Okinawa became the scene of a horrifying ground battle.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>先の大戦においては、ここ沖縄の地は、凄惨な地上戦の場となりました。</seg>
+        <prop type="x-Similarity-Score">0.2170683741569519</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>More than 200,000 precious lives were lost, including innocent civilians and members of the Japanese armed forces from both within and outside Okinawa Prefecture. Okinawa's beautiful natural environment and rich culture were mercilessly destroyed.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>罪もない民間人や、県内外出身の兵士の方々など、20万人以上もの尊い命が失われ、沖縄の美しい自然、豊かな文化は容赦なく破壊されました。</seg>
+        <prop type="x-Similarity-Score">0.2164095938205719</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This year, the names of an additional 95 individuals have been engraved on the Cornerstone of Peace.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>平和の礎(いしじ)には、今年、新たに95名のお名前が刻印されました。</seg>
+        <prop type="x-Similarity-Score">0.21727588772773743</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The youth who fell in battle to protect their country and their families despite having many dreams and aspirations for the future; fathers and mothers who passed away praying for the safety of their children.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>多くの夢や希望を抱きながらも、国を、家族を守ろうと戦って斃れた若者たち、我が子の無事を願いながら息絶えたお父様・お母様。</seg>
+        <prop type="x-Similarity-Score">0.18792274594306946</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Whenever I reflect upon the regret of all those who perished in the war and the grief of the bereaved families, my heart is filled with profound sorrow.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>全ての戦没者の皆様の無念と残された御遺族の方々の悲しみを思うとき、本当に胸が締めつけられる思いでございます。</seg>
+        <prop type="x-Similarity-Score">0.23584124445915222</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The peace and prosperity we enjoy today have been built upon the precious sacrifices of those who lost their lives as well as Okinawa's history of hardships, which defies description.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>今日私たちが享受している平和と繁栄は、この地で命を落とされた方々の尊い犠牲と、沖縄の歩んだ筆舌に尽くし難い苦難の歴史の上に築かれたものです。</seg>
+        <prop type="x-Similarity-Score">0.2877873182296753</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Bearing this deeply in mind once again, I bow my head in solemn remembrance.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>そのことを改めて深く胸に刻みながら、静かに頭(こうべ)を垂れたいと思います。</seg>
+        <prop type="x-Similarity-Score">0.417292058467865</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Under our unwavering pledge never again to repeat the devastation of war, Japan has steadfastly moved forward on this path as a nation that places the highest value on peace.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>我が国は、「二度と戦争の惨禍を繰り返さない」という決然たる誓いのもと、平和を重んじる国家として歩みを進めてまいりました。</seg>
+        <prop type="x-Similarity-Score">0.35774657130241394</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I hereby pledge before the souls of the departed that we will continue to make every effort to realize a society in which all people in Japan can live in peace and with dignity and fulfillment.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>これからも、日本人の誰もが、平和で心豊かに暮らせる世の中を実現するため、不断の努力を重ねていくことを、御霊にお誓い申し上げます。</seg>
+        <prop type="x-Similarity-Score">0.25474438071250916</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Even 80 years after the end of the war, the people of Okinawa continue to bear a significant burden due to the concentration of U.S. military facilities and areas.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>沖縄の皆様には、戦後80年を経た今もなお、米軍基地の集中による大きな御負担を担っていただいております。</seg>
+        <prop type="x-Similarity-Score">0.2958773970603943</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The Government will continue to work toward the consolidation, realignment, and reduction of U.S. Forces facilities and areas in Japan, while cooperating closely with the people of Okinawa to promote the effective utilization of former military sites.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>在日米軍施設・区域の整理・統合・縮小に取り組むとともに、沖縄の皆様と連携し、駐留軍用地跡地の有効利用を進めてまいります。</seg>
+        <prop type="x-Similarity-Score">0.27654367685317993</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Shurijo Castle, which was destroyed by fire in October 2019, is a source of pride not only for the people of Okinawa but also for Japan as a whole.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>令和元年10月に焼失してしまった首里城は、沖縄の皆様のみならず、我が国の誇りです。</seg>
+        <prop type="x-Similarity-Score">0.3488828241825104</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Thanks to continued efforts toward its restoration, the completion ceremony for the reconstruction of the Seiden (Main Hall) will be held this November.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>復元に向けた取組を進めた結果、今年の11月に 正殿復元完成式が挙行されます。</seg>
+        <prop type="x-Similarity-Score">0.3422662615776062</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Shurijo Castle has suffered destruction by fire on numerous occasions, including during the Battle of Okinawa.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>首里城は、沖縄戦の際を含め、何度も焼失の憂き目を見てきました。</seg>
+        <prop type="x-Similarity-Score">0.26611319184303284</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Yet this immensely important cultural treasure has always been rebuilt through perseverance and determination.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>しかし、この極めて重要な建造物は、諦めずに再建されてきました。</seg>
+        <prop type="x-Similarity-Score">0.4296969175338745</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Overcoming adversity and creating hope for the future—this is the strength that the people of Okinawa have cultivated.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>困難を乗り越え、希望を紡ぎ出していく。 沖縄の皆様が培われてきたその強さ。</seg>
+        <prop type="x-Similarity-Score">0.3361074924468994</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>It is a strength that they have had no choice but to develop.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>強くあらねばならなかった。</seg>
+        <prop type="x-Similarity-Score">0.7076087594032288</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>As Prime Minister, I reflect deeply on this fact.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>そのことに、内閣総理大臣として、思いを致しています。</seg>
+        <prop type="x-Similarity-Score">0.3317696154117584</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In closing, I offer my sincere prayers that the souls here rest in peace and my heartfelt wishes for the peace of the bereaved families.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202606/0623okinawa.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>結びに、この地に眠る 御霊の安らかならんことを、そして御遺族の方々の御平安を、心からお祈り申し上げます。</seg>
+        <prop type="x-Similarity-Score">0.27103397250175476</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0623okinawa.html</prop>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

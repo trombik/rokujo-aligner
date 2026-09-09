@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="rokujo-aligner" creationtoolversion="0.1.0" segtype="sentence" o-tmf="UTF-8" adminlang="en" srclang="en" datatype="PlainText"/>
+  <body>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I am Kanno from Fuji Television.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>フジテレビの菅野と申します。</seg>
+        <prop type="x-Similarity-Score">0.2507319152355194</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Thank you for taking my question.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>よろしくお願いいたします。</seg>
+        <prop type="x-Similarity-Score">0.6785911917686462</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Madame Prime Minister, Russian state media reported today that President Putin made his first visit to Etorofu Island in the Northern Territories, which is an inherent territory of Japan.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>ロシアの国営メディアは本日、プーチン大統領が日本固有の領土である北方領土の択捉(えとろふ)島を初めて訪問したと報じました。</seg>
+        <prop type="x-Similarity-Score">0.2802630662918091</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>What is your view on this development, and how does the Government intend to respond going forward?</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>これに対する総理の受け止めと今後の対応について伺います。</seg>
+        <prop type="x-Similarity-Score">0.5384109616279602</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Today, August 13, I was informed that President Putin of Russia visited Etorofu Island.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>はい。 本日13日、プーチン・ロシア大統領が択捉島を訪問したという報告を受けました。</seg>
+        <prop type="x-Similarity-Score">0.3785853385925293</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Since President Putin stated in January 2024 that he would definitely visit the Northern Territories, the Government of Japan has repeatedly conveyed to the Russian side not to make such a visit by the President to the Northern Territories.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>2024年1月にプーチン大統領が北方領土を必ず訪問する旨を述べて以来、日本政府としては、ロシア側に対して、大統領による北方領土訪問が行われないよう、累次申し入れてまいりました。</seg>
+        <prop type="x-Similarity-Score">0.1092066839337349</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I strongly protest President Putin's visit to Etorofu Island today, which took place despite such repeated representations made by the Government of Japan.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>それにもかかわらず、本日、プーチン大統領が択捉島を訪問したことに、強く抗議をいたします。</seg>
+        <prop type="x-Similarity-Score">0.5154328346252441</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>The Northern Territories are an inherent territory of Japan in light of historical facts and based on international law.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>北方領土は、歴史的にも国際法上も我が国固有の領土であります。</seg>
+        <prop type="x-Similarity-Score">0.29388147592544556</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>This visit to Etorofu Island by the incumbent President of Russia is incompatible with the Government of Japan's consistent position on the Northern Territories.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>ロシアの現職の大統領による今般の択捉島訪問は、北方領土に関する日本の一貫した立場と相容れません。</seg>
+        <prop type="x-Similarity-Score">0.2711584270000458</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Furthermore, it hurts the public sentiment of the Japanese people and is absolutely unacceptable.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>また、日本国民の感情を傷つけるものであり、断じて許容できません。</seg>
+        <prop type="x-Similarity-Score">0.2024512141942978</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Japan-Russia relations remain in a difficult situation as a result of Russia's aggression against Ukraine.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>ロシアによるウクライナ侵略を受けて、日露関係は厳しい状況にあります。</seg>
+        <prop type="x-Similarity-Score">0.2773057520389557</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Even under such circumstances, Japan has made every possible effort. However, I must say that this visit has further hardened public sentiment toward Russia in Japan and made it more difficult to restore Japan-Russia relations over the medium to long term.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>そのような中でも、日本はできる限りの努力を払ってきましたが、今回の訪問は、日本国内の対露感情を一層厳しくし、中長期的な関係回復を困難にしたと言わざるを得ません。</seg>
+        <prop type="x-Similarity-Score">0.2844989001750946</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I would like the Russian side to fully appreciate the gravity of this matter.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>ロシア側においては、このことの重大さを深刻に受け止めてほしいと考えております。 以上です。</seg>
+        <prop type="x-Similarity-Score">0.27785345911979675</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I am Echigo from Jiji Press.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>時事通信の越後です。</seg>
+        <prop type="x-Similarity-Score">0.8524333834648132</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>When did the Government of Japan become aware of this visit?</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>日本政府としては、今回の訪問について把握したのはいつ頃だったのでしょうか。</seg>
+        <prop type="x-Similarity-Score">0.10675432533025742</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>We were confirming the facts.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>事実確認を行っておりました。</seg>
+        <prop type="x-Similarity-Score">0.25355830788612366</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I was informed this afternoon.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>私に連絡があったのは今日の午後でございます。</seg>
+        <prop type="x-Similarity-Score">0.24414627254009247</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>I am Kobayashi from The Hokkaido Shimbun.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>北海道新聞の小林です。</seg>
+        <prop type="x-Similarity-Score">0.43420907855033875</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>In light of the brief exchange between Foreign Minister Motegi and Foreign Minister Lavrov in July, how does the Government intend to pursue channels of dialogue between Japan and Russia going forward?</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>7月に茂木外務大臣とラブロフ外務大臣が短時間接触しましたが、今後どのように日露の対話を、チャネルを作るおつもりでしょうか。</seg>
+        <prop type="x-Similarity-Score">0.3366681933403015</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>With regard to this visit to Etorofu Island by the President of Russia, the Ministry of Foreign Affairs will also express our strong protest to the Russian side shortly.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>そうですね、今回のロシアの大統領による択捉島の訪問につきましては、これはこの後、外務省からも強く抗議を行う予定でございます。</seg>
+        <prop type="x-Similarity-Score">0.43548640608787537</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>For Japan, visits to the graves in the Northern Territories, in particular, are a humanitarian issue, and it is precisely for this reason that we have continued to address the matter while keeping channels of dialogue firmly open.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>日本としては、特に北方領土における墓参の問題、これは人道上の問題でございます。 ですから、話し合いのチャンネルをちゃんと開けてですね、対応してきたわけでございます。</seg>
+        <prop type="x-Similarity-Score">0.23112905025482178</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>Against this backdrop, I find the current situation deeply regrettable.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>今回非常に残念な状況にあると思っております。</seg>
+        <prop type="x-Similarity-Score">0.3927059471607208</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="en">
+        <seg>As for our response going forward, the Government will give the matter careful consideration.</seg>
+        <prop type="x-Location">https://japan.kantei.go.jp/105/speech/202608/0813kaiken.html</prop>
+      </tuv>
+      <tuv xml:lang="ja">
+        <seg>今後の対応につきましては、政府内でしっかりと検討いたします。</seg>
+        <prop type="x-Similarity-Score">0.29752862453460693</prop>
+        <prop type="x-Location">https://www.kantei.go.jp/jp/105/statement/2026/0813kaiken.html</prop>
+      </tuv>
+    </tu>
+  </body>
+</tmx>
