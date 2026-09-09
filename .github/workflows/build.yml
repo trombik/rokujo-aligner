@@ -28,9 +28,8 @@ jobs:
 
       - name: Install C Compiler (Windows)
         if: runner.os == 'Windows'
-        uses: TheMrMilchmann/setup-msvc-dev@v4
-        with:
-          arch: x64
+        run: |
+          winget install Microsoft.VisualStudio.2022.BuildTools --accept-source-agreements --accept-package-agreements --source winget
 
       - name: Install C Compiler (Linux)
         if: runner.os == 'Linux'

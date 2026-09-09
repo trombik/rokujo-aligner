@@ -103,6 +103,13 @@ xcode-select --install
 brew install python
 ```
 
+For Windows:
+
+```console
+winget install Python.Python.3.12
+winget install Microsoft.VisualStudio.2022.BuildTools
+```
+
 For FreeBSD:
 
 ```console
