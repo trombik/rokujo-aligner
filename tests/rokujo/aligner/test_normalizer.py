@@ -33,6 +33,8 @@ class TestMarkdownNormalizer:
         assert normalizer.normalize("Hello\u00a0World") == "Hello World"
         assert normalizer.normalize("［］") == "[]"
         assert normalizer.normalize("（）") == "()"
+        assert normalizer.normalize("【】") == "[]"
+        assert normalizer.normalize("\u3000") == " "
 
     def test_remove_repeated_spaces(self, normalizer):
         assert normalizer.normalize("Hello    World") == "Hello World"

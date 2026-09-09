@@ -42,6 +42,8 @@ class MarkdownNormalizer:
             "\N{HALFWIDTH LEFT CORNER BRACKET}": "「",
             "\N{HALFWIDTH RIGHT CORNER BRACKET}": "」",
             "\N{HORIZONTAL BAR}": "\N{EM DASH}",
+            "\N{LEFT BLACK LENTICULAR BRACKET}": "[",
+            "\N{RIGHT BLACK LENTICULAR BRACKET}": "]",
             "\N{LEFT DOUBLE QUOTATION MARK}": '"',
             "\N{LEFT SINGLE QUOTATION MARK}": "'",
             "\N{RIGHT DOUBLE QUOTATION MARK}": '"',
