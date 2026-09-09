@@ -129,7 +129,7 @@ class VecalignAligner(BaseAligner):
 
         # Lower values (closer to 0): Lower the deletion penalty, making the
         # algorithm more willing to leave sentences unaligned
-        del_percentile_frac: float = 0.2,
+        del_percentile_frac: float = 0.15,
     ):
         source_sentences = self.source_processor.split_sentence(source_string)
         logger.debug(f"splited source:\n{source_sentences}")
