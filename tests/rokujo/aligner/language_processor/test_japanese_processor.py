@@ -9,9 +9,18 @@ from rokujo.aligner.language_processor import JapaneseProcessor
         ["こんにちは。さようなら。", ["こんにちは。", "さようなら。"]],
         ["(ある文章。)", ["(ある文章。)"]],
         ["文章。(ある文章。)文章。", ["文章。", "(ある文章。)", "文章。"]],
-        ["この文章は(なんと!)一つの文章です。", ["この文章は(なんと!)一つの文章です。"]],
-        ["この文章は(もしかして?)一つの文章です。", ["この文章は(もしかして?)一つの文章です。"]],
-        ["この文章は(実は)一つの文章です。", ["この文章は(実は)一つの文章です。"]],
+        [
+            "この文章は(なんと!)一つの文章です。",
+            ["この文章は(なんと!)一つの文章です。"],
+        ],
+        [
+            "この文章は(もしかして?)一つの文章です。",
+            ["この文章は(もしかして?)一つの文章です。"],
+        ],
+        [
+            "この文章は(実は)一つの文章です。",
+            ["この文章は(実は)一つの文章です。"],
+        ],
     ],
 )
 def test_split_sentence(text, expected):
@@ -53,11 +62,16 @@ def test_count_sentence(text, expected):
     "text, expected",
     [
         ["Posted by someone", False],
-        ["山田太郎記者", False],
+        ["(質問者)", False],
+        ["1月1日", False],
+        ["「有効なパラグラフ」", True],
+        ["有効なパラグラフ。", True],
+        ["これは(なんと!)有効。", True],
     ],
 )
 def test_is_valid_paragraph(text, expected):
     processor = JapaneseProcessor()
+    print(text)
     result = processor.is_valid_paragraph(text)
 
     assert expected == result

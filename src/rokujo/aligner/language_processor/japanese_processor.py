@@ -21,10 +21,14 @@ class JapaneseProcessor(LanguageProcessor):
         #
         # * Posted by someone
         # * 聞き手：山田太郎
-        if n_sentence == 1 and not text.endswith(self.sentence_endings):
+        if n_sentence == 1:
             if text.startswith("「") and text.endswith("」"):
-                pass
-            else:
+                return True
+            if (
+                not text.strip("(")
+                .strip(")")
+                .endswith(self.sentence_endings)
+            ):
                 return False
         return True
 
@@ -58,10 +62,8 @@ class JapaneseProcessor(LanguageProcessor):
         for index, sent in enumerate(raw_sentences):
             if sent is None:
                 continue
-            if index + 1 != len(raw_sentences) and re.search(r'[!?]\)$', sent):
-                sentences.append(
-                    f"{sent}{raw_sentences[index + 1]}"
-                )
+            if index + 1 != len(raw_sentences) and re.search(r"[!?]\)$", sent):
+                sentences.append(f"{sent}{raw_sentences[index + 1]}")
                 raw_sentences[index + 1] = None
             else:
                 sentences.append(sent)
