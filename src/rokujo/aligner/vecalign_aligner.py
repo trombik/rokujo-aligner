@@ -5,6 +5,8 @@ import numpy as np
 from vecalign.dp_utils import (
     make_alignment_types,
     vecalign,
+    layer,
+    preprocess_line
 )
 
 from .base_aligner import BaseAligner
@@ -53,17 +55,15 @@ class VecalignAligner(BaseAligner):
         language_processor,
         batch_size=16,  # for CPU, 8 - 16. For GPU 32
     ):
-        num_lines = len(lines)
-        all_texts = []
-        text_position_map = []  # [(size, i), ...]
 
+        processed_lines = [preprocess_line(line) for line in lines]
+        num_lines = len(processed_lines)
+        separator = language_processor.paragraph_separator
+
+        all_texts = []
         for size in range(1, alignment_max_size + 1):
-            for i in range(num_lines - size + 1):
-                text = language_processor.paragraph_separator.join(
-                    [lines[j].strip() for j in range(i, i + size)]
-                )
-                all_texts.append(text)
-                text_position_map.append((size, i))
+            layer_texts = layer(processed_lines, size, comb=separator)
+            all_texts.extend(layer_texts)
 
         if not all_texts:
             return np.zeros(
@@ -71,8 +71,7 @@ class VecalignAligner(BaseAligner):
             )
 
         logger.debug(
-            f"Encoding all {len(all_texts)} combinations "
-            "in a single batch pass..."
+            f"Encoding all {len(all_texts)} combinations in a single batch."
         )
         all_embeddings = encoder.encode(
             all_texts,
@@ -83,12 +82,7 @@ class VecalignAligner(BaseAligner):
         )
 
         dim = all_embeddings.shape[1]
-        vecs = np.zeros((alignment_max_size, num_lines, dim), dtype=np.float32)
-
-        for idx, (size, i) in enumerate(text_position_map):
-            vecs[size - 1, i, :] = all_embeddings[idx]
-
-        return vecs
+        return all_embeddings.reshape(alignment_max_size, num_lines, dim)
 
     def extract_aligned_pairs_from_stack(
         self, source_sentences, target_sentences, stack
@@ -130,8 +124,12 @@ class VecalignAligner(BaseAligner):
         self,
         source_string: str,
         target_string: str,
-        alignment_max_size: int = 6,
+        alignment_max_size: int = 4,
         search_buffer_size: int = 5,
+
+        # Lower values (closer to 0): Lower the deletion penalty, making the
+        # algorithm more willing to leave sentences unaligned
+        del_percentile_frac: float = 0.2,
     ):
         source_sentences = self.source_processor.split_sentence(source_string)
         logger.debug(f"splited source:\n{source_sentences}")
@@ -167,7 +165,7 @@ class VecalignAligner(BaseAligner):
             vecs0=source_vecs,
             vecs1=target_vecs,
             final_alignment_types=final_alignment_types,
-            del_percentile_frac=0.2,
+            del_percentile_frac=del_percentile_frac,
             width_over2=width_over2,
             max_size_full_dp=300,
             costs_sample_size=20000,
