@@ -73,10 +73,11 @@ class VecalignAligner(BaseAligner):
         logger.debug(
             f"Encoding all {len(all_texts)} combinations in a single batch."
         )
+        show_progress_bar = logger.getEffectiveLevel() == logging.DEBUG
         all_embeddings = encoder.encode(
             all_texts,
             batch_size=batch_size,
-            show_progress_bar=True,
+            show_progress_bar=show_progress_bar,
             normalize_embeddings=True,
             convert_to_numpy=True,
         )
