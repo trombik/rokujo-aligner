@@ -34,6 +34,7 @@ alignment.
 * [Applications](#applications)
 * [Supported Document Types](#supported-document-types)
 * [Supported Language Pair](#supported-language-pair)
+* [Examples](#examples)
 * [Requirements](#requirements)
 * [Installation](#installation)
     * [With `uv`](#with-uv)
@@ -66,6 +67,10 @@ Other file formats might be supported in future.
 ## Supported Language Pair
 
 * English - Japanese
+
+## Examples
+
+Example translation memories can be found under [examples](examples).
 
 ## Requirements
 
@@ -269,6 +274,9 @@ request, please submit an issue at
 
 `rokujo-aligner` is licensed under the MIT license. See
 [LICENSE](LICENSE) for details.
+
+Translation memories under [examples](examples) are licensed under
+[Public Data License (Version 1.0)](https://japan.kantei.go.jp/policies/terms_e.html).
 
 Users are solely responsible for ensuring that their processing of input
 documents or websites complies with applicable laws, copyright regulations, and
