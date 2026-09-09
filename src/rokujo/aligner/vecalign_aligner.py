@@ -84,7 +84,7 @@ class VecalignAligner(BaseAligner):
         dim = all_embeddings.shape[1]
         return all_embeddings.reshape(alignment_max_size, num_lines, dim)
 
-    def extract_aligned_pairs_from_stack(
+    def _extract_aligned_pairs_from_stack(
         self, source_sentences, target_sentences, stack
     ):
         aligned_pairs = []
@@ -172,7 +172,7 @@ class VecalignAligner(BaseAligner):
             num_samps_for_norm=100,
         )
 
-        aligned_pairs = self.extract_aligned_pairs_from_stack(
+        aligned_pairs = self._extract_aligned_pairs_from_stack(
             source_sentences, target_sentences, stack
         )
         self.display_stats(
