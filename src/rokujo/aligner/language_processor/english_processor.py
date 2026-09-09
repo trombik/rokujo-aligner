@@ -30,7 +30,7 @@ class EnglishProcessor(LanguageProcessor):
 
     def is_valid_paragraph(self, text: str) -> bool:
         n_sentence = self.count_sentence(text)
-        if n_sentence == 1 and not text.endswith(self.sentence_endings):
-            return False
-
+        if n_sentence == 1:
+            if not text.strip('"').endswith(self.sentence_endings):
+                return False
         return True
