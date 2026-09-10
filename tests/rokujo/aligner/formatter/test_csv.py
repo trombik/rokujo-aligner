@@ -1,8 +1,13 @@
 import io
 import csv
 
-from rokujo.aligner.formatter.csv import CSVFormatter
 from rokujo.aligner.aligned_line import AlignedLine
+from rokujo.aligner.formatter.csv import CSVFormatter
+from rokujo.aligner.vecalign_aligner import VecalignAligner
+from rokujo.aligner.language_processor import (
+    EnglishProcessor,
+    JapaneseProcessor,
+)
 
 
 def test_csv():
@@ -22,12 +27,17 @@ def test_csv():
         )
 
     formatter = CSVFormatter()
+    aligner = VecalignAligner(
+        source_processor=EnglishProcessor(),
+        target_processor=JapaneseProcessor(),
+    )
     result = formatter.process(
         aligned_lines,
         source_lang="en",
         target_lang="ja",
         source_location=None,
         target_location=None,
+        aligner=aligner,
     )
 
     csv_result = io.StringIO(result)

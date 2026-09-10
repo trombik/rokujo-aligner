@@ -2,6 +2,7 @@ import csv
 import io
 
 from rokujo.aligner.aligned_line import AlignedLine
+from rokujo.aligner.base_aligner import BaseAligner
 from .base import BaseFormatter
 
 
@@ -13,6 +14,7 @@ class CSVFormatter(BaseFormatter):
         target_lang: str,
         source_location: str | None,
         target_location: str | None,
+        aligner: BaseAligner,
     ):
         header = [source_lang, target_lang]
         aligned_texts = []
