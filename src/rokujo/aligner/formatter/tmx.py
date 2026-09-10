@@ -1,5 +1,9 @@
+from importlib.metadata import version
+
 from lxml import etree
+
 from rokujo.aligner.aligned_line import AlignedLine
+from rokujo.aligner.base_aligner import BaseAligner
 from .base import BaseFormatter
 
 
@@ -11,6 +15,7 @@ class TMXFormatter(BaseFormatter):
         target_lang: str,
         source_location: str | None,
         target_location: str | None,
+        aligner: BaseAligner,
     ) -> str:
         if not aligned_lines:
             return ""
@@ -21,7 +26,7 @@ class TMXFormatter(BaseFormatter):
             "header",
             attrib={
                 "creationtool": "rokujo-aligner",
-                "creationtoolversion": "0.1.0",
+                "creationtoolversion": version("rokujo-aligner"),
                 "segtype": "sentence",
                 "o-tmf": "UTF-8",
                 "adminlang": "en",
@@ -29,6 +34,11 @@ class TMXFormatter(BaseFormatter):
                 "datatype": "PlainText",
             },
         )
+        header = root.find("header")
+        prop_alignment_type = etree.SubElement(
+            header, "prop", attrib={"type": "x-Aligner-Name"}
+        )
+        prop_alignment_type.text = aligner.__class__.__name__
 
         body = etree.SubElement(root, "body")
 

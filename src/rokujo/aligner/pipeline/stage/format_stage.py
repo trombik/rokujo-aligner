@@ -10,5 +10,6 @@ class FormatStage(BaseStage):
             target_lang=ctx.target_processor.lang,
             source_location=ctx.source_location,
             target_location=ctx.target_location,
+            aligner=ctx.aligner,
         )
         return ctx

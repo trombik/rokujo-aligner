@@ -2,6 +2,11 @@ import xml.etree.ElementTree as ElementTree
 
 from rokujo.aligner.formatter.tmx import TMXFormatter
 from rokujo.aligner.aligned_line import AlignedLine
+from rokujo.aligner.vecalign_aligner import VecalignAligner
+from rokujo.aligner.language_processor import (
+    EnglishProcessor,
+    JapaneseProcessor,
+)
 
 XML_NS = {"xml": "http://www.w3.org/XML/1998/namespace"}
 
@@ -23,12 +28,17 @@ def test_tmx():
             )
         )
     formatter = TMXFormatter()
+    aligner = VecalignAligner(
+        source_processor=EnglishProcessor(),
+        target_processor=JapaneseProcessor(),
+    )
     result = formatter.process(
         aligned_lines,
         source_lang="en",
         target_lang="ja",
         source_location="source_location",
         target_location="target_location",
+        aligner=aligner,
     )
     root = ElementTree.fromstring(result.encode("utf-8"))
 
@@ -38,6 +48,10 @@ def test_tmx():
     header = root.find("header")
     assert header is not None
     assert header.get("srclang") == "en"
+    assert (
+        header.find('prop[@type="x-Aligner-Name"]').text
+        == aligner.__class__.__name__
+    )
 
     body = root.find("body")
     assert body is not None

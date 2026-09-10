@@ -3,6 +3,7 @@ import os
 import typer
 import sys
 
+from importlib.metadata import version
 from typing import Optional
 from pathlib import Path
 
@@ -154,6 +155,13 @@ def main(
         The name of encoder.
         """,
     ),
+    show_version: bool = typer.Option(
+        False,
+        "--version",
+        help="""
+            Show version.
+        """,
+    ),
 ):
     """
     Align sentences from source and target location. The source and target are
@@ -213,6 +221,10 @@ def main(
     else:
         numeric_level = getattr(logging, log_level.value)
     setup_cli_logging(numeric_level)
+
+    if show_version:
+        print(version("rokujo-aligner"))
+        exit(0)
 
     if not online:
         logger.debug("Enable offline processing.")
