@@ -1,4 +1,7 @@
+from importlib.metadata import version
+
 from lxml import etree
+
 from rokujo.aligner.aligned_line import AlignedLine
 from .base import BaseFormatter
 
@@ -21,7 +24,7 @@ class TMXFormatter(BaseFormatter):
             "header",
             attrib={
                 "creationtool": "rokujo-aligner",
-                "creationtoolversion": "0.1.0",
+                "creationtoolversion": version("rokujo-aligner"),
                 "segtype": "sentence",
                 "o-tmf": "UTF-8",
                 "adminlang": "en",
