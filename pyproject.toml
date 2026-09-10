@@ -1,6 +1,6 @@
 [project]
 name = "rokujo-aligner"
-version = "0.1.0"
+version = "1.0.1"
 description = "rokujo-aligner is a command-line tool designed to automatically extract sentence-level parallel corpora from documents in two different languages,"
 readme = "README.md"
 requires-python = ">=3.12"
