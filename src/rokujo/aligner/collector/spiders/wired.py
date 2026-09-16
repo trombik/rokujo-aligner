@@ -14,14 +14,18 @@ class WiredSpider(BaseBilingualArticleSpider):
         "https://wired.jp/opinion/",
     ]
     article_xpath = "//a[contains(@href, '/article/')]/@href"
-    source_xpath = (
-        "//p[contains("
-        "translate(text() | .//text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), "  # noqa E501
-        "'originally published'"
-        ")]//a/@href"
-    )
     next_page_xpath = (
         "//a[.//span[text()='Next Page']]/@href"
+    )
+    source_xpath = (
+        '(//p[contains('
+        'translate(text() | .//text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), '
+        '"originally published"'
+        ')]//a/@href) | '
+        '(//p//a[contains('
+        'translate(text(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"), '
+        '"wired"'
+        ')]/@href)'
     )
     # most, if not all, sources are on different domains.
     dont_filter = True
