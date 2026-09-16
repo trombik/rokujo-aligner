@@ -310,13 +310,10 @@ def process_from_file(
         source = pair.source
         target = pair.target
 
-        process_as_markdown = False
-        if pair.source_markdown and pair.target_markdown:
-            source = pair.source_markdown
-            target = pair.target_markdown
-            logger.debug("The pair contains markdown contents.")
-            logger.debug("Skipping downloads.")
-            process_as_markdown = True
+        if pair.source_markdown:
+            source_markdown = pair.source_markdown
+        if pair.target_markdown:
+            target_markdown = pair.target_markdown
 
         process(
             source=source,
@@ -325,7 +322,8 @@ def process_from_file(
             output_file=Path(output_dir, filename),
             encoder=encoder_model,
             aligner_type=aligner_type,
-            process_as_markdown=process_as_markdown,
+            source_markdown=source_markdown,
+            target_markdown=target_markdown,
         )
 
 
@@ -372,7 +370,8 @@ def process(
     output_file: Path,
     encoder,
     aligner_type: str,
-    process_as_markdown: bool = False,
+    source_markdown: str | None,
+    target_markdown: str | None,
 ):
     console = get_console()
 
@@ -384,14 +383,19 @@ def process(
         transient=True,
     ) as progress:
         progress.add_task("Converting source and target...", total=None)
-        if process_as_markdown:
-            converter_source = MarkdownConverter()
-            converter_target = MarkdownConverter()
+        if source_markdown is not None:
+            markdown_source = source_markdown
         else:
-            converter_source = ConverterFactory.get_converter(source)
-            converter_target = ConverterFactory.get_converter(target)
-        markdown_source = converter_source.convert(source)
-        markdown_target = converter_target.convert(target)
+            markdown_source = ConverterFactory.get_converter(source).convert(
+                source
+            )
+
+        if target_markdown is not None:
+            markdown_target = target_markdown
+        else:
+            markdown_target = ConverterFactory.get_converter(target).convert(
+                target
+            )
 
     match output_format:
         case "tmx":
@@ -412,13 +416,13 @@ def process(
             aligner = SimpleAligner(
                 source_processor=source_processor,
                 target_processor=target_processor,
-                encoder=encoder
+                encoder=encoder,
             )
         case "vecalign":
             aligner = VecalignAligner(
                 source_processor=source_processor,
                 target_processor=target_processor,
-                encoder=encoder
+                encoder=encoder,
             )
 
     pipeline = MarkdownPipeline()
